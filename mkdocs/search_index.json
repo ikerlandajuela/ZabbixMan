@@ -1,0 +1,24 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Inicio",
+            "title": "Inicio"
+        },
+        {
+            "location": "/#inicio",
+            "text": "",
+            "title": "Inicio"
+        },
+        {
+            "location": "/server/instalacion/",
+            "text": "Servidor basado en Ubuntu 16.04 virtualizado con Virtual Box\n\n\nLa forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado, descargamos una imagen ya creada para VBox de Ubuntu 16.04",
+            "title": "Instalaci\u00f3n"
+        },
+        {
+            "location": "/server/instalacion/#servidor-basado-en-ubuntu-1604-virtualizado-con-virtual-box",
+            "text": "La forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado, descargamos una imagen ya creada para VBox de Ubuntu 16.04",
+            "title": "Servidor basado en Ubuntu 16.04 virtualizado con Virtual Box"
+        }
+    ]
+}
