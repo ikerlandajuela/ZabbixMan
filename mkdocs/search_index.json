@@ -11,14 +11,24 @@
             "title": "Inicio"
         },
         {
-            "location": "/server/instalacion/",
-            "text": "Servidor basado en Ubuntu 16.04 virtualizado con Virtual Box\n\n\nLa forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado, descargamos una imagen ya creada para VBox de Ubuntu 16.04",
-            "title": "Instalaci\u00f3n"
+            "location": "/server/instalacion_ubuntu_vbox/",
+            "text": "M\u00e1quina Virtual Virtual Box con Ubuntu\n\n\nLa forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado, \ndescargamos\n una imagen ya creada para VBox de \nUbuntu 16.04.3 LTS (Xenial)\n de la Web de \nOSBoxes.org\n. \n\n\nYo estoy usando Debian 9  \u201cStretch\u201d como anfitrion y VBox Version 5.1.32.\n\n\n\n\nDatos de la imagen:\n\n\n\n\nUbuntu 16.04.3 Xenial.\n\n\nVirtualBox (VDI) 32bit.\n\n\nSHA256: 0d94f64ffe926bf7fa995fcc7bc66897ad4cfcc86532fafcb927dafcf69d76e5\n\n\nDescarga\n.\n\n\nUsername: osboxes\n\n\nPassword: osboxes.org\n\n\nVB Guest Additions & VMware Tools: Not Installed\n\n\nVMware Compatibility: Version 10+\n\n\n\n\nLa imagen para VBox con extensi\u00f3n '.vdi' requiere que creemos la m\u00e1quina Linux previamente en VBox y seleccionar el archivo 'Ubuntu 16.04.3 (32bit).vdi' como disco duro.\n\n\nEn pocos minutos est\u00e1 corriendo mi m\u00e1quina virtual que albergara el servidor Zabbix.\n\n\n\n\nAntes de empezar instalar servidor OpenSSH:\n\n\n# apt-get install openssh-server\n\n\n\n\nInstalaci\u00f3n Zabbix con paquetes\n\n\nExisten varias formas de instalaci\u00f3n pero la m\u00e1s recomendada es usar los paquetes que existen para cada tipo de distribuci\u00f3n Linux: Debian, RedHat o Ubuntu.\n\n\nExiste un \nrepositorio oficial\n con los paquetes ordenados por distribuci\u00f3n y todas las versiones disponibles de Zabbix.\n\n\n\n\nPara Ubuntu los comandos que debemos introducir son los siguientes:\n\n\n# wget http://repo.zabbix.com/zabbix/3.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.2-1+xenial_all.deb\n# dpkg -i zabbix-release_3.2-1+xenial_all.deb\n# apt-get update\n\n\n\n\nAhora ya estamos preparados para instalar el servidor Zabbix usando MySQL o PostreSQL, yo usare MySQL omo gestor de base de datos. \n\n\n# apt-get install zabbix-server-mysql zabbix-frontend-php\n\n\n\n\nCreando la base de datos\n\n\n# mysql -uroot -posboxes.org\nMariaBD[(none)]> create database zabbix character set utf8 collate utf8_bin;\nMariaBD[(none)]> grant all privileges on zabbix.* to zabbix@localhost identified by 'osboxes.org';\nMariaBD[(none)]> quit\n# zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uzabbix -p zabbix-release\n\n\n\n\nEnlaces externos\n\n\n\n\nOficial \nZabbix Documentation 3.2\n.",
+            "title": "Instalaci\u00f3n - Ubuntu 16.04 - VBox"
         },
         {
-            "location": "/server/instalacion/#servidor-basado-en-ubuntu-1604-virtualizado-con-virtual-box",
-            "text": "La forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado, descargamos una imagen ya creada para VBox de Ubuntu 16.04",
-            "title": "Servidor basado en Ubuntu 16.04 virtualizado con Virtual Box"
+            "location": "/server/instalacion_ubuntu_vbox/#maquina-virtual-virtual-box-con-ubuntu",
+            "text": "La forma m\u00e1s f\u00e1cil y r\u00e1pida de empezar es crear un servidor de Zabbix virtualizado,  descargamos  una imagen ya creada para VBox de  Ubuntu 16.04.3 LTS (Xenial)  de la Web de  OSBoxes.org .   Yo estoy usando Debian 9  \u201cStretch\u201d como anfitrion y VBox Version 5.1.32.   Datos de la imagen:   Ubuntu 16.04.3 Xenial.  VirtualBox (VDI) 32bit.  SHA256: 0d94f64ffe926bf7fa995fcc7bc66897ad4cfcc86532fafcb927dafcf69d76e5  Descarga .  Username: osboxes  Password: osboxes.org  VB Guest Additions & VMware Tools: Not Installed  VMware Compatibility: Version 10+   La imagen para VBox con extensi\u00f3n '.vdi' requiere que creemos la m\u00e1quina Linux previamente en VBox y seleccionar el archivo 'Ubuntu 16.04.3 (32bit).vdi' como disco duro.  En pocos minutos est\u00e1 corriendo mi m\u00e1quina virtual que albergara el servidor Zabbix.   Antes de empezar instalar servidor OpenSSH:  # apt-get install openssh-server",
+            "title": "M\u00e1quina Virtual Virtual Box con Ubuntu"
+        },
+        {
+            "location": "/server/instalacion_ubuntu_vbox/#instalacion-zabbix-con-paquetes",
+            "text": "Existen varias formas de instalaci\u00f3n pero la m\u00e1s recomendada es usar los paquetes que existen para cada tipo de distribuci\u00f3n Linux: Debian, RedHat o Ubuntu.  Existe un  repositorio oficial  con los paquetes ordenados por distribuci\u00f3n y todas las versiones disponibles de Zabbix.   Para Ubuntu los comandos que debemos introducir son los siguientes:  # wget http://repo.zabbix.com/zabbix/3.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.2-1+xenial_all.deb\n# dpkg -i zabbix-release_3.2-1+xenial_all.deb\n# apt-get update  Ahora ya estamos preparados para instalar el servidor Zabbix usando MySQL o PostreSQL, yo usare MySQL omo gestor de base de datos.   # apt-get install zabbix-server-mysql zabbix-frontend-php  Creando la base de datos  # mysql -uroot -posboxes.org\nMariaBD[(none)]> create database zabbix character set utf8 collate utf8_bin;\nMariaBD[(none)]> grant all privileges on zabbix.* to zabbix@localhost identified by 'osboxes.org';\nMariaBD[(none)]> quit\n# zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uzabbix -p zabbix-release",
+            "title": "Instalaci\u00f3n Zabbix con paquetes"
+        },
+        {
+            "location": "/server/instalacion_ubuntu_vbox/#enlaces-externos",
+            "text": "Oficial  Zabbix Documentation 3.2 .",
+            "title": "Enlaces externos"
         }
     ]
 }
