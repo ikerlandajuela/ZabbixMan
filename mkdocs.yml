@@ -1,1 +1,8 @@
-site_name: My Docs
+site_name: ZabbixMan
+default: Iker Landajuela
+theme: readthedocs
+repo_url: https://github.com/ikerlandajuela/ZabbixMan/
+pages:
+    - Inicio: index.md
+    - Server:
+        - 'Instalación - Ubuntu 16.04 - VBox': 'server/instalacion_ubuntu_vbox.md'
