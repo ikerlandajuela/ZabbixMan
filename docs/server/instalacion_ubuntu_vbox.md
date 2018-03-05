@@ -66,7 +66,51 @@ MariaBD[(none)]> quit
 # zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uzabbix -p zabbix-release
 ```
 
+![](/server/img/instalacion/04.png)
 
+
+Algunos comandos en MySQL:
+
+```bash
+# mysql -uroot -posboxes.org
+MariaBD[(none)]> show databases;
+MariaBD[(none)]> use zabbix;
+MariaBD[(none)]> show tables;
+```
+
+# Configurando el demonio servidor Zabbix
+
+Editamos el siguiente fichero y modificamos los parámetros de configuración de acceso a la BD MySQL.
+
+```bash
+# nano /etc/zabbix/zabbix_server.conf
+DBHost=localhost
+DBName=zabbix
+DBUser=zabbix
+DBPassword=osboxes.org
+```
+
+# Arrancando el servicio
+
+Arrancamos el servicio y configuramos para que arranque de forma automática con el arranque del sistema operativo.
+
+```bash
+# service zabbix-server start
+# service zabbix-server status
+# update-rc.d zabbix-server enable
+# service apache2 restart
+```
+
+
+# Instalación frontend PHP
+
+Antes de comenzar con el proceso de instalación es recomendable editar `/etc/apache2/conf-enabled/zabbix.conf` y al menos establecer la zona horaria ([set the right timezone ](http://php.net/manual/en/timezones.php)).
+
+![](/server/img/instalacion/05.png)
+
+Ahora podemos acceder al frontend de Zabbix en la URL http://<server_ip_or_name>/zabbix:
+
+![](/server/img/instalacion/06.png)
 
 
 
