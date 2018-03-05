@@ -112,7 +112,27 @@ Ahora podemos acceder al frontend de Zabbix en la URL http://<server_ip_or_name>
 
 ![](/server/img/instalacion/06.png)
 
+He instalado algunos paquetes adicionales para satisfacer algunos requisitos del servidor:
 
+```bash
+$ sudo apt install php7.0-bcmath
+$ sudo apt-get install php7.0-mbstring
+$ sudo apt-get install php7.0-xml
+```
+
+![](/server/img/instalacion/07.png)
+
+![](/server/img/instalacion/08.png)
+
+![](/server/img/instalacion/09.png)
+
+![](/server/img/instalacion/10.png)
+
+![](/server/img/instalacion/11.png)
+
+Advertencia: El usuario es “Admin” con clave “zabbix”.
+
+![](/server/img/instalacion/12.png)
 
 # Enlaces externos
 

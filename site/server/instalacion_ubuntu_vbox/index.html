@@ -210,6 +210,21 @@ DBPassword=osboxes.org
 <h1 id="instalacion-frontend-php">Instalación frontend PHP</h1>
 <p>Antes de comenzar con el proceso de instalación es recomendable editar <code>/etc/apache2/conf-enabled/zabbix.conf</code> y al menos establecer la zona horaria (<a href="http://php.net/manual/en/timezones.php">set the right timezone </a>).</p>
 <p><img alt="" src="../../server/img/instalacion/05.png" /></p>
+<p>Ahora podemos acceder al frontend de Zabbix en la URL http://<server_ip_or_name>/zabbix:</p>
+<p><img alt="" src="../../server/img/instalacion/06.png" /></p>
+<p>He instalado algunos paquetes adicionales para satisfacer algunos requisitos del servidor:</p>
+<pre><code class="bash">$ sudo apt install php7.0-bcmath
+$ sudo apt-get install php7.0-mbstring
+$ sudo apt-get install php7.0-xml
+</code></pre>
+
+<p><img alt="" src="../../server/img/instalacion/07.png" /></p>
+<p><img alt="" src="../../server/img/instalacion/08.png" /></p>
+<p><img alt="" src="../../server/img/instalacion/09.png" /></p>
+<p><img alt="" src="../../server/img/instalacion/10.png" /></p>
+<p><img alt="" src="../../server/img/instalacion/11.png" /></p>
+<p>Advertencia: El usuario es “Admin” con clave “zabbix”.</p>
+<p><img alt="" src="../../server/img/instalacion/12.png" /></p>
 <h1 id="enlaces-externos">Enlaces externos</h1>
 <ul>
 <li>Oficial <a href="https://www.zabbix.com/documentation/3.2/manual">Zabbix Documentation 3.2</a>.</li>
