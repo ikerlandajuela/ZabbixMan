@@ -6,3 +6,5 @@ pages:
     - Inicio: index.md
     - Server:
         - 'Instalación - Ubuntu 16.04 - VBox': 'server/instalacion_ubuntu_vbox.md'
+    - Agente:
+        - 'Instalación: Agente Win7 en VBox': 'agente/win7_vbox/instalacion_agente_win7_vbox.md'
