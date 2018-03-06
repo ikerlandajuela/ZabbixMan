@@ -59,7 +59,7 @@ Con la configuración básica realizada es el momento de ejecutar el agente por 
 c:\zabbix>zabbix_agentd.exe -c c:\zabbix\zabbix_agentd.win.conf -f
 ```
 
-Para poder visualizar el agente debemos añadirlo como host en el frontend Web del servidor Zabbix.
+**Para poder visualizar el agente debemos añadirlo como host en el frontend Web del servidor Zabbix**.
 
 # Enlaces externos
 
