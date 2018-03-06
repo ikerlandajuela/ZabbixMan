@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Instalación: Agente Win7 en VBox - ZabbixMan</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Instalación: Agente Win7 en VBox";
+    var mkdocs_page_input_path = "agente/win7_vbox/instalacion_agente_win7_vbox.md";
+    var mkdocs_page_url = "/agente/win7_vbox/instalacion_agente_win7_vbox/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> ZabbixMan</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Inicio</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Server</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../server/instalacion_ubuntu_vbox/">Instalación - Ubuntu 16.04 - VBox</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Agente</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Instalación: Agente Win7 en VBox</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#descarga-agente">Descarga agente</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#configuracion-zabbix_agentdwinconf">Configuración zabbix_agentd.win.conf</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#primera-ejecucion">Primera ejecución</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#enlaces-externos">Enlaces externos</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">ZabbixMan</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Agente &raquo;</li>
+        
+      
+    
+    <li>Instalación: Agente Win7 en VBox</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ikerlandajuela/ZabbixMan/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="descarga-agente">Descarga agente</h1>
+<p>Voy a virtualizar una máquina MS Win7 (x86) en VirtualBox para configurarlo como agente Zabbix. La buena noticia es que Microsoft ofrece la descarga de sistemas operativos virtualizados (Win7,Win81 y Win10) de forma gratuita en periodo de evaluación de 90 pero sin ninguna restricción (<a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/">enlace</a>).</p>
+<p><img alt="" src="../../../agente/win7_vbox/img/01.png" /></p>
+<p>Vamos a descargar un agente precompilado (el binario o ejecutable final) para MS Win i386 <a href="https://www.zabbix.com/downloads/3.4.6/zabbix_agents_3.4.6.win.zip">zabbix_agents_3.4.6.win.zip</a> de la Web oficial de Zabbix (<a href="https://www.zabbix.com/download_agents">enlace</a>)  </p>
+<p><img alt="" src="../../../agente/win7_vbox/img/02.png" /></p>
+<p>Despues de descargar y descomprimir los ficheros he creado una carpeta en el raiz 'C:\zabbiz' y he copiado los ejecutables para win32 y el fichero de configuración 'zabbix_agentd.win.conf'.</p>
+<p><img alt="" src="../../../agente/win7_vbox/img/03.png" /></p>
+<p>Ficheros:</p>
+<ul>
+<li><strong>zabbix_agentd.win.conf</strong>: Fichero de texto plano que contiene la configuración del agente y del servidor Zabbix con el que debe comunicar.</li>
+<li><strong>zabbix_agentd.exe</strong>: Agente que podemos ejecutar de forma puntual o instalar como servicio de Win que se ejecute con el arranque del SO.</li>
+<li><strong>zabbix_get.exe</strong>: Utilidad de línea de comandos para obtener datos de un agente Zabbix (<a href="https://www.zabbix.com/documentation/3.4/manpages/zabbix_get">zabbix_get - Zabbix get utility</a>).</li>
+<li><strong>zabbix_sender.exe</strong>: Utilidad de línea de comandos para mandar datos de monitorización a un servidor Zabbix (<a href="https://www.zabbix.com/documentation/3.4/manpages/zabbix_sender">zabbix_sender - Zabbix sender utility</a>). </li>
+</ul>
+<h1 id="configuracion-zabbix_agentdwinconf">Configuración zabbix_agentd.win.conf</h1>
+<p>Podemos ejecutar más de una instancia del agente Zabbix, antes de ejecutar por primera vez 'zabbix_agentd.exe' hay que configurar los parámetros mínimos en el archivo 'zabbix_agentd.win.conf' para que realize la conexión con el servidor.</p>
+<ul>
+<li><code>LogType=file</code>.</li>
+<li><code>LogFile</code>: Hacemos que apunte a <code>LogFile=c:\zabbix\zabbix_agentd.log</code> para poder analizar la ejecución del agente, especialmente en caso de problemas.</li>
+<li><code>DebugLevel=5</code>: Información detallada en los logs.</li>
+<li><code>SourceIP=192.168.221.107</code>. Dirección IP de nuestra máquina Win7 para conexiones salientes.</li>
+<li><code>EnableRemoteCommands=1</code>. Permitir comandos remotos.</li>
+<li><code>LogRemoteCommands=1</code>. Registrar comandos remotos como logs de warning.</li>
+</ul>
+<p>A continuación el fichero tiene dos apartados dependiendo del comportamiento del <a href="https://www.zabbix.com/zabbix_agent">agente</a>.</p>
+<p><img alt="" src="../../../agente/win7_vbox/img/04.png" /></p>
+<p>Agente pasivo '<strong>polling</strong>': El servidor Zabbix es quien interroga al agente, el agente procesa la petición y retorna el valor.</p>
+<ul>
+<li><code>Server=192.168.221.102</code>: Nombre del host o dirección de red del servidor.</li>
+<li><code>ListenPort=10050</code>: Puerto local del agente donde "escuchará" las conexiones entrantes del servidor.</li>
+<li><code>ListenIP=192.168.221.107</code>: IP local del agente.</li>
+</ul>
+<p>Agente activo '<strong>trapping</strong>': El agente solicita al servidor una lista de checks activos. El agente remite esta información de forma periódica al servidor.  </p>
+<ul>
+<li><code>ServerActive=192.168.221.102</code>.</li>
+<li><code>Hostname=IE8WIN7</code>: Nombre de host del agente (<strong>debe coincidir con el nombre configurado en el servidor</strong>).</li>
+</ul>
+<h1 id="primera-ejecucion">Primera ejecución</h1>
+<p>Con la configuración básica realizada es el momento de ejecutar el agente por línea de comandos para probarlo:</p>
+<pre><code>c:\zabbix&gt;zabbix_agentd.exe -c c:\zabbix\zabbix_agentd.win.conf -f
+</code></pre>
+
+<p>Para poder visualizar el agente debemos añadirlo como host en el frontend Web del servidor Zabbix.</p>
+<h1 id="enlaces-externos">Enlaces externos</h1>
+<ul>
+<li><a href="https://www.zabbix.com/documentation/3.4/manual/appendix/config/zabbix_agentd_win">4 Zabbix agent (Windows)</a>: he parameters supported in a Zabbix agent (Windows) configuration file.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../../server/instalacion_ubuntu_vbox/" class="btn btn-neutral" title="Instalación - Ubuntu 16.04 - VBox"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ikerlandajuela/ZabbixMan/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../../server/instalacion_ubuntu_vbox/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
