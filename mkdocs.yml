@@ -4,6 +4,8 @@ theme: readthedocs
 repo_url: https://github.com/ikerlandajuela/ZabbixMan/
 pages:
     - Inicio: index.md
+    - General:
+        - 'Descripción general': 'general/descripcion_general.md'
     - Server:
         - 'Instalación - Ubuntu 16.04 - VBox': 'server/instalacion_ubuntu_vbox.md'
         - 'Configuración básica del primer host Win7': 'server/configuracion_basica_host_win7.md'

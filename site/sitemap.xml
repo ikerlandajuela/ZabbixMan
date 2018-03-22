@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,14 +12,24 @@
     
         
     <url>
+     <loc>None/general/descripcion_general/</loc>
+     <lastmod>2018-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
      <loc>None/server/instalacion_ubuntu_vbox/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/server/configuracion_basica_host_win7/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,7 +39,7 @@
         
     <url>
      <loc>None/agente/win7_vbox/instalacion_agente_win7_vbox/</loc>
-     <lastmod>2018-03-06</lastmod>
+     <lastmod>2018-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
