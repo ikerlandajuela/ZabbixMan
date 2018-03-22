@@ -12,6 +12,16 @@
     
         
     <url>
+     <loc>None/general/descripcion_general/</loc>
+     <lastmod>2018-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
      <loc>None/server/instalacion_ubuntu_vbox/</loc>
      <lastmod>2018-03-22</lastmod>
      <changefreq>daily</changefreq>

@@ -2,13 +2,23 @@
     "docs": [
         {
             "location": "/",
-            "text": "Inicio\n\n\nTEST",
+            "text": "\u00bfQu\u00e9 es Zabbix?\n\n\nZabbix\n es un software de monitorizaci\u00f3n de equipos en red, basado en \nsoftware abierto\n recaba informaci\u00f3n de los sistemas controlados por un agente y muestra la informaci\u00f3n centralizada en un frontend Web en el servidor.\n\n\nCaracter\u00edsticas principales\n\n\nZabbix ofrece una soluci\u00f3n \nflexible\n que permite monitorizar diferentes infraestructuras y elementos presentes en una red. El estudio de los \ncasos de uso\n y sus aplicaciones practicas que describen en la Web oficial dan una idea de su capacidad de adaptaci\u00f3n. \nUno de los casos m\u00e1s comunes es evidentemente monitorizar servidores y servicios cr\u00edticos\n de una empresa, este caso ser\u00e1 el m\u00e1s estudiado en este manual que lees.\n\n\nUno de los fuertes de Zabbix es una interface Web del servidor muy cuidada donde se presenta la informaci\u00f3n con diferentes vistas y formatos, cuadro de mando central, gr\u00e1ficos, mapas de red, reportes.\n\n\n\n\nPara recolectar los datos necesarios en el servidor existen agentes que funcionan como clientes para diferentes sistemas operativos, \nel agente se instala como servicio o demonio (se ejeucta en segundo plano), es muy liviano y consume muy pocos recursos, la configuraci\u00f3n del agente se realiza en un fichero de texto plano lo que hace que el agente sea altamente portable\n. El agente ya contempla una serie de checks o items a monitorizar como por ejemplo: interface de red, CPU, memoria, disco, sistema, logs... (\nver lista completa en la Web oficial\n). Pero adem\u00e1s de eso lo que lo hace muy flexible es que \nel usuario puede definir par\u00e1metros personalizados\n.\n\n\nCuando instalamos el servidor viene \nprecargado con plantillas (templates) para los tipos de sistemas operativos del agente m\u00e1s t\u00edpicos\n, MS Windows server, Win7, m\u00e1quinas virtualizadas, etc.. Las plantillas contienen items o elementos que podemos modificar o a\u00f1adir nuevos para monitorizar nuevos par\u00e1metros no contemplados.",
             "title": "Inicio"
         },
         {
-            "location": "/#inicio",
-            "text": "TEST",
-            "title": "Inicio"
+            "location": "/#que-es-zabbix",
+            "text": "Zabbix  es un software de monitorizaci\u00f3n de equipos en red, basado en  software abierto  recaba informaci\u00f3n de los sistemas controlados por un agente y muestra la informaci\u00f3n centralizada en un frontend Web en el servidor.",
+            "title": "\u00bfQu\u00e9 es Zabbix?"
+        },
+        {
+            "location": "/#caracteristicas-principales",
+            "text": "Zabbix ofrece una soluci\u00f3n  flexible  que permite monitorizar diferentes infraestructuras y elementos presentes en una red. El estudio de los  casos de uso  y sus aplicaciones practicas que describen en la Web oficial dan una idea de su capacidad de adaptaci\u00f3n.  Uno de los casos m\u00e1s comunes es evidentemente monitorizar servidores y servicios cr\u00edticos  de una empresa, este caso ser\u00e1 el m\u00e1s estudiado en este manual que lees.  Uno de los fuertes de Zabbix es una interface Web del servidor muy cuidada donde se presenta la informaci\u00f3n con diferentes vistas y formatos, cuadro de mando central, gr\u00e1ficos, mapas de red, reportes.   Para recolectar los datos necesarios en el servidor existen agentes que funcionan como clientes para diferentes sistemas operativos,  el agente se instala como servicio o demonio (se ejeucta en segundo plano), es muy liviano y consume muy pocos recursos, la configuraci\u00f3n del agente se realiza en un fichero de texto plano lo que hace que el agente sea altamente portable . El agente ya contempla una serie de checks o items a monitorizar como por ejemplo: interface de red, CPU, memoria, disco, sistema, logs... ( ver lista completa en la Web oficial ). Pero adem\u00e1s de eso lo que lo hace muy flexible es que  el usuario puede definir par\u00e1metros personalizados .  Cuando instalamos el servidor viene  precargado con plantillas (templates) para los tipos de sistemas operativos del agente m\u00e1s t\u00edpicos , MS Windows server, Win7, m\u00e1quinas virtualizadas, etc.. Las plantillas contienen items o elementos que podemos modificar o a\u00f1adir nuevos para monitorizar nuevos par\u00e1metros no contemplados.",
+            "title": "Caracter\u00edsticas principales"
+        },
+        {
+            "location": "/general/descripcion_general/",
+            "text": "",
+            "title": "Descripci\u00f3n general"
         },
         {
             "location": "/server/instalacion_ubuntu_vbox/",

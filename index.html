@@ -60,12 +60,30 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#inicio">Inicio</a></li>
+                <li class="toctree-l3"><a href="#que-es-zabbix">¿Qué es Zabbix?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#caracteristicas-principales">Características principales</a></li>
                 
             
             </ul>
         
     </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>General</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="general/descripcion_general/">Descripción general</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
             <li>
@@ -141,8 +159,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="inicio">Inicio</h1>
-<p>TEST</p>
+                <h1 id="que-es-zabbix">¿Qué es Zabbix?</h1>
+<p><a href="https://www.zabbix.com/">Zabbix</a> es un software de monitorización de equipos en red, basado en <strong>software abierto</strong> recaba información de los sistemas controlados por un agente y muestra la información centralizada en un frontend Web en el servidor.</p>
+<h1 id="caracteristicas-principales">Características principales</h1>
+<p>Zabbix ofrece una solución <strong>flexible</strong> que permite monitorizar diferentes infraestructuras y elementos presentes en una red. El estudio de los <a href="https://www.zabbix.com/case_studies">casos de uso</a> y sus aplicaciones practicas que describen en la Web oficial dan una idea de su capacidad de adaptación. <strong>Uno de los casos más comunes es evidentemente monitorizar servidores y servicios críticos</strong> de una empresa, este caso será el más estudiado en este manual que lees.</p>
+<p>Uno de los fuertes de Zabbix es una interface Web del servidor muy cuidada donde se presenta la información con diferentes vistas y formatos, cuadro de mando central, gráficos, mapas de red, reportes.</p>
+<p><img alt="" src="https://assets.zabbix.com/img/screenshots/3.0/monitoring/Custom_screens.png" /></p>
+<p>Para recolectar los datos necesarios en el servidor existen agentes que funcionan como clientes para diferentes sistemas operativos, <strong>el agente se instala como servicio o demonio (se ejeucta en segundo plano), es muy liviano y consume muy pocos recursos, la configuración del agente se realiza en un fichero de texto plano lo que hace que el agente sea altamente portable</strong>. El agente ya contempla una serie de checks o items a monitorizar como por ejemplo: interface de red, CPU, memoria, disco, sistema, logs... (<a href="https://www.zabbix.com/documentation/3.0/manual/config/items/itemtypes/zabbix_agent">ver lista completa en la Web oficial</a>). Pero además de eso lo que lo hace muy flexible es que <strong>el usuario puede definir parámetros personalizados</strong>.</p>
+<p>Cuando instalamos el servidor viene <strong>precargado con plantillas (templates) para los tipos de sistemas operativos del agente más típicos</strong>, MS Windows server, Win7, máquinas virtualizadas, etc.. Las plantillas contienen items o elementos que podemos modificar o añadir nuevos para monitorizar nuevos parámetros no contemplados.</p>
               
             </div>
           </div>
@@ -150,7 +174,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="server/instalacion_ubuntu_vbox/" class="btn btn-neutral float-right" title="Instalación - Ubuntu 16.04 - VBox">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="general/descripcion_general/" class="btn btn-neutral float-right" title="Descripción general">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -180,7 +204,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="server/instalacion_ubuntu_vbox/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="general/descripcion_general/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -190,5 +214,5 @@
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2018-03-22 17:44:56
+Build Date UTC : 2018-03-22 18:38:31
 -->
