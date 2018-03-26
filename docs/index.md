@@ -14,7 +14,7 @@ Para recolectar los datos necesarios en el servidor existen agentes que funciona
 
 Cuando instalamos el servidor viene **precargado con plantillas (templates) para los tipos de sistemas operativos del agente más típicos**, MS Windows server, Win7, máquinas virtualizadas, etc.. Las plantillas contienen items o elementos que podemos modificar o añadir nuevos para monitorizar nuevos parámetros no contemplados.
 
-
+	
 
 
 

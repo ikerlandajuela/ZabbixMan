@@ -8,6 +8,6 @@ pages:
         - 'Descripción general': 'general/descripcion_general.md'
     - Server:
         - 'Instalación - Ubuntu 16.04 - VBox': 'server/instalacion_ubuntu_vbox.md'
-        - 'Configuración básica del primer host Win7': 'server/configuracion_basica_host_win7.md'
+        - 'Diagnóstico de problemas': 'server/problemas.md'
     - Agente:
         - 'Instalación: Agente Win7 en VBox': 'agente/win7_vbox/instalacion_agente_win7_vbox.md'

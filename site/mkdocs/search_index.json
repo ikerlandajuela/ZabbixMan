@@ -56,9 +56,19 @@
             "title": "Enlaces externos"
         },
         {
-            "location": "/server/configuracion_basica_host_win7/",
-            "text": "",
-            "title": "Configuraci\u00f3n b\u00e1sica del primer host Win7"
+            "location": "/server/problemas/",
+            "text": "Puerto local del servidor Zabbix\n\n\nEl servidor Zabbix usa normalmente el puerto 10050/10051 por defecto para comunicarse con los agentes, en caso de problemas una de las pruebas m\u00e1s b\u00e1sicas es comprobar que el puerto esta abierto y accesible desde la red, a menudo las IPTABLES de Linux o el FW de MS Win lo bloquean.\n\n\nPara detectar los puertos TCP abiertos ejecutamos \nnestat\n en el servidor (conexi\u00f3n SSH), entre los resultados deber\u00eda figurar el puerto 10051:\n\n\n$ netstat -vatn \n\n\n\n\nOtra prueba un poco m\u00e1s intrusiva es conectarnos directamente al puerto usando Telnet, la conexi\u00f3n se interrumpe pero se observa que por un momento se ha abierto, si lo hacemos desde el propio servidor (lo bonito es hacerlo desde otra m\u00e1quina para descartar tambi\u00e9n problemas de red):\n\n\n$ telnet 127.0.0.1 10050\n\n\n\n\nDemonio Zabbix\n\n\nLogicamente para que el servidor funcione debe estar el demonio o servicio arrancado. El script de arranque del servicio se encuentra en la siguiente ruta: \n/etc/init.d/zabbix-server\n.\n\n\nEl script \nzabbix-server\n acepta par\u00e1metros como \n[start|stop|refresh]\n para controlar el demonio.\n\n\nEl siguiente comando obtiene informaci\u00f3n del estado del servicio, por ejemplo su estado y desde cuando lleva arrancado:\n\n\n$ service zabbix-server status",
+            "title": "Diagn\u00f3stico de problemas"
+        },
+        {
+            "location": "/server/problemas/#puerto-local-del-servidor-zabbix",
+            "text": "El servidor Zabbix usa normalmente el puerto 10050/10051 por defecto para comunicarse con los agentes, en caso de problemas una de las pruebas m\u00e1s b\u00e1sicas es comprobar que el puerto esta abierto y accesible desde la red, a menudo las IPTABLES de Linux o el FW de MS Win lo bloquean.  Para detectar los puertos TCP abiertos ejecutamos  nestat  en el servidor (conexi\u00f3n SSH), entre los resultados deber\u00eda figurar el puerto 10051:  $ netstat -vatn   Otra prueba un poco m\u00e1s intrusiva es conectarnos directamente al puerto usando Telnet, la conexi\u00f3n se interrumpe pero se observa que por un momento se ha abierto, si lo hacemos desde el propio servidor (lo bonito es hacerlo desde otra m\u00e1quina para descartar tambi\u00e9n problemas de red):  $ telnet 127.0.0.1 10050",
+            "title": "Puerto local del servidor Zabbix"
+        },
+        {
+            "location": "/server/problemas/#demonio-zabbix",
+            "text": "Logicamente para que el servidor funcione debe estar el demonio o servicio arrancado. El script de arranque del servicio se encuentra en la siguiente ruta:  /etc/init.d/zabbix-server .  El script  zabbix-server  acepta par\u00e1metros como  [start|stop|refresh]  para controlar el demonio.  El siguiente comando obtiene informaci\u00f3n del estado del servicio, por ejemplo su estado y desde cuando lleva arrancado:  $ service zabbix-server status",
+            "title": "Demonio Zabbix"
         },
         {
             "location": "/agente/win7_vbox/instalacion_agente_win7_vbox/",
