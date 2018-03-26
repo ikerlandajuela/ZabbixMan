@@ -8,7 +8,7 @@
   
   <meta name="author" content="Iker Landajuela">
   
-  <title>Descripción general - ZabbixMan</title>
+  <title>Diagnóstico de problemas - ZabbixMan</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Descripción general";
-    var mkdocs_page_input_path = "general/descripcion_general.md";
-    var mkdocs_page_url = "/general/descripcion_general/";
+    var mkdocs_page_name = "Diagnóstico de problemas";
+    var mkdocs_page_input_path = "server/problemas.md";
+    var mkdocs_page_url = "/server/problemas/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -67,12 +67,8 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Descripción general</a>
-        
-            <ul>
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../general/descripcion_general/">Descripción general</a>
         
     </li>
 
@@ -87,14 +83,24 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../server/instalacion_ubuntu_vbox/">Instalación - Ubuntu 16.04 - VBox</a>
+        <a class="" href="../instalacion_ubuntu_vbox/">Instalación - Ubuntu 16.04 - VBox</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../server/problemas/">Diagnóstico de problemas</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Diagnóstico de problemas</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#puerto-local-del-servidor-zabbix">Puerto local del servidor Zabbix</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#demonio-zabbix">Demonio Zabbix</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -139,11 +145,11 @@
     
       
         
-          <li>General &raquo;</li>
+          <li>Server &raquo;</li>
         
       
     
-    <li>Descripción general</li>
+    <li>Diagnóstico de problemas</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -157,7 +163,22 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="puerto-local-del-servidor-zabbix">Puerto local del servidor Zabbix</h1>
+<p>El servidor Zabbix usa normalmente el puerto 10050/10051 por defecto para comunicarse con los agentes, en caso de problemas una de las pruebas más básicas es comprobar que el puerto esta abierto y accesible desde la red, a menudo las IPTABLES de Linux o el FW de MS Win lo bloquean.</p>
+<p>Para detectar los puertos TCP abiertos ejecutamos <code>nestat</code> en el servidor (conexión SSH), entre los resultados debería figurar el puerto 10051:</p>
+<pre><code>$ netstat -vatn 
+</code></pre>
+
+<p>Otra prueba un poco más intrusiva es conectarnos directamente al puerto usando Telnet, la conexión se interrumpe pero se observa que por un momento se ha abierto, si lo hacemos desde el propio servidor (lo bonito es hacerlo desde otra máquina para descartar también problemas de red):</p>
+<pre><code>$ telnet 127.0.0.1 10050
+</code></pre>
+
+<h1 id="demonio-zabbix">Demonio Zabbix</h1>
+<p>Logicamente para que el servidor funcione debe estar el demonio o servicio arrancado. El script de arranque del servicio se encuentra en la siguiente ruta: <code>/etc/init.d/zabbix-server</code>.</p>
+<p>El script <code>zabbix-server</code> acepta parámetros como <code>[start|stop|refresh]</code> para controlar el demonio.</p>
+<p>El siguiente comando obtiene información del estado del servicio, por ejemplo su estado y desde cuando lleva arrancado:</p>
+<pre><code>$ service zabbix-server status
+</code></pre>
               
             </div>
           </div>
@@ -165,10 +186,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../server/instalacion_ubuntu_vbox/" class="btn btn-neutral float-right" title="Instalación - Ubuntu 16.04 - VBox">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../agente/win7_vbox/instalacion_agente_win7_vbox/" class="btn btn-neutral float-right" title="Instalación: Agente Win7 en VBox">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../.." class="btn btn-neutral" title="Inicio"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../instalacion_ubuntu_vbox/" class="btn btn-neutral" title="Instalación - Ubuntu 16.04 - VBox"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -196,10 +217,10 @@
           <a href="https://github.com/ikerlandajuela/ZabbixMan/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../instalacion_ubuntu_vbox/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../server/instalacion_ubuntu_vbox/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../agente/win7_vbox/instalacion_agente_win7_vbox/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
