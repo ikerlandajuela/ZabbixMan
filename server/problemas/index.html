@@ -100,6 +100,15 @@
                 <li class="toctree-l3"><a href="#demonio-zabbix">Demonio Zabbix</a></li>
                 
             
+                <li class="toctree-l3"><a href="#configuracion-servidor-zabbix-zabbix_serverconf">Configuración servidor Zabbix zabbix_server.conf</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#logs-del-servidor-zabbix">Logs del servidor Zabbix</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#frontent-php-y-apache">Frontent PHP y Apache</a></li>
+                
+            
             </ul>
         
     </li>
@@ -169,16 +178,77 @@
 <pre><code>$ netstat -vatn 
 </code></pre>
 
+<p><img alt="" src="../../server/img/problemas/01.png" /></p>
 <p>Otra prueba un poco más intrusiva es conectarnos directamente al puerto usando Telnet, la conexión se interrumpe pero se observa que por un momento se ha abierto, si lo hacemos desde el propio servidor (lo bonito es hacerlo desde otra máquina para descartar también problemas de red):</p>
-<pre><code>$ telnet 127.0.0.1 10050
+<pre><code>$ telnet 127.0.0.1 10051
 </code></pre>
 
+<p><img alt="" src="../../server/img/problemas/02.png" /></p>
 <h1 id="demonio-zabbix">Demonio Zabbix</h1>
 <p>Logicamente para que el servidor funcione debe estar el demonio o servicio arrancado. El script de arranque del servicio se encuentra en la siguiente ruta: <code>/etc/init.d/zabbix-server</code>.</p>
+<p>Podemos comprobar si el proceso <code>zabbix_server</code> está corriendo con el siguiente comando:</p>
+<pre><code>osboxes@osboxes:~$ ps -ax | grep &quot;zabbix_server&quot;
+13601 ?        S      0:00 /usr/sbin/zabbix_server -c /etc/zabbix/zabbix_server.conf
+13603 ?        S      0:19 /usr/sbin/zabbix_server: configuration syncer [synced configuration in 0.010576 sec, idle 60 sec]
+13604 ?        S      0:09 /usr/sbin/zabbix_server: db watchdog [synced alerts config in 0.000973 sec, idle 60 sec]
+13605 ?        S      0:13 /usr/sbin/zabbix_server: poller #1 [got 0 values in 0.000013 sec, idle 5 sec]
+13606 ?        S      0:13 /usr/sbin/zabbix_server: poller #2 [got 0 values in 0.000010 sec, idle 5 sec]
+13607 ?        S      0:13 /usr/sbin/zabbix_server: poller #3 [got 0 values in 0.000011 sec, idle 5 sec]
+13608 ?        S      0:13 /usr/sbin/zabbix_server: poller #4 [got 0 values in 0.000012 sec, idle 5 sec]
+13609 ?        S      0:12 /usr/sbin/zabbix_server: poller #5 [got 0 values in 0.000010 sec, idle 5 sec]
+13610 ?        S      0:15 /usr/sbin/zabbix_server: unreachable poller #1 [got 0 values in 0.000014 sec, idle 5 sec]
+13611 ?        S      0:00 /usr/sbin/zabbix_server: trapper #1 [processed data in 0.000008 sec, waiting for connection]
+13612 ?        S      0:00 /usr/sbin/zabbix_server: trapper #2 [processed data in 0.000015 sec, waiting for connection]
+13613 ?        S      0:00 /usr/sbin/zabbix_server: trapper #3 [processed data in 0.000009 sec, waiting for connection]
+13614 ?        S      0:00 /usr/sbin/zabbix_server: trapper #4 [processed data in 0.000009 sec, waiting for connection]
+13615 ?        S      0:00 /usr/sbin/zabbix_server: trapper #5 [processed data in 0.000020 sec, waiting for connection]
+13616 ?        S      0:10 /usr/sbin/zabbix_server: icmp pinger #1 [got 0 values in 0.000010 sec, idle 5 sec]
+13617 ?        S      0:08 /usr/sbin/zabbix_server: alerter [sent alerts: 0 success, 0 fail in 0.000221 sec, idle 30 sec]
+13618 ?        S      0:07 /usr/sbin/zabbix_server: housekeeper [deleted 0 hist/trends, 0 items/triggers, 0 events, 0 sessions, 0 alarms, 0 audit items in 0.032341 sec, idle for 1 hour(s)]
+13619 ?        S      0:11 /usr/sbin/zabbix_server: timer #1 [processed 1 triggers, 0 events in 0.000201 sec, 0 maintenances in 0.000686 sec, idle 30 sec]
+13620 ?        S      0:20 /usr/sbin/zabbix_server: http poller #1 [got 0 values in 0.000951 sec, idle 5 sec]
+13621 ?        S      0:08 /usr/sbin/zabbix_server: discoverer #1 [processed 0 rules in 0.001172 sec, idle 60 sec]
+13622 ?        S      0:22 /usr/sbin/zabbix_server: history syncer #1 [synced 0 items in 0.000004 sec, idle 1 sec]
+13623 ?        S      0:22 /usr/sbin/zabbix_server: history syncer #2 [synced 0 items in 0.000002 sec, idle 1 sec]
+13624 ?        S      0:22 /usr/sbin/zabbix_server: history syncer #3 [synced 0 items in 0.000002 sec, idle 1 sec]
+13625 ?        S      0:22 /usr/sbin/zabbix_server: history syncer #4 [synced 0 items in 0.000002 sec, idle 1 sec]
+13626 ?        S      0:30 /usr/sbin/zabbix_server: escalator #1 [processed 0 escalations in 0.000405 sec, idle 3 sec]
+13627 ?        S      0:11 /usr/sbin/zabbix_server: proxy poller #1 [exchanged data with 0 proxies in 0.000009 sec, idle 5 sec]
+13628 ?        S      0:22 /usr/sbin/zabbix_server: self-monitoring [processed data in 0.000011 sec, idle 1 sec]
+13629 ?        S      0:15 /usr/sbin/zabbix_server: task manager [processed 0 task(s) in 0.000139 sec, idle 5 sec]
+20539 pts/17   S+     0:00 grep --color=auto zabbix_server
+</code></pre>
+
+<p><strong>La primera línea del resultado nos permite ver que el binario ejecutable <code>zabbix_server</code> carga la configuración de <code>/etc/zabbix/zabbix_server.conf</code>.</strong> </p>
+<p><img alt="" src="../../server/img/problemas/06.png" /></p>
+<p>Otros procesos a tomar en cuenta son el servidor HTTP Apache (<code>apache2</code>) y la BD Mysql (<code>mysqld</code>).</p>
 <p>El script <code>zabbix-server</code> acepta parámetros como <code>[start|stop|refresh]</code> para controlar el demonio.</p>
 <p>El siguiente comando obtiene información del estado del servicio, por ejemplo su estado y desde cuando lleva arrancado:</p>
 <pre><code>$ service zabbix-server status
 </code></pre>
+
+<p><img alt="" src="../../server/img/problemas/03.png" /></p>
+<h1 id="configuracion-servidor-zabbix-zabbix_serverconf">Configuración servidor Zabbix zabbix_server.conf</h1>
+<p>Parámetros:</p>
+<ul>
+<li><code>ListenPort</code>: Por defecto siempre será 10051 a no ser que lo cambiemos, normalmente no será necesario cambiarlo a no ser que algún otro servicio lo estuviera ocupando.</li>
+<li><code>SourceIP</code>: Dirección de red del servidor.</li>
+<li><code>LogType</code>: Sistema de logs (por defecto a fichero).</li>
+<li><code>LogFile</code>: Fichero de log normalmente <code>/var/log/zabbix/zabbix_server.log</code>. </li>
+<li><code>DebugLevel</code>: Normalmente con valor 3 para guardar logs de warning y error, con propósitos de debugear algún error podemos modificarlo a 4 o 5 para que muestre información detallada de la ejecución del servidor.</li>
+<li><code>PidFile</code>: Archivo con el identificador del proceso del servidor, normalmente <code>/var/run/zabbix/zabbix_server.pid</code>, si queremos ver el PID del proceso principal podemos hacerlo con <code>more /var/run/zabbix/zabbix_server.pid</code>. </li>
+<li>A continuación especifica la conexión a la BD: <code>DBHost</code>, <code>DBName</code>, <code>DBSchema</code>, <code>DBUser</code> (normalmente 'zabbix'), <code>DBPassword</code> (en mi caso 'osboxes.org'), <code>DBSocket</code>, <code>DBPort</code> (en MySQL por defecto suele ser 3306).</li>
+</ul>
+<p>El fichero sigue con otros parámetros avanzados que ire comentando en cada caso. Por ejemplo la variable <code>AlertScriptsPath</code> será de gran interés ya que indica la ruta para definir scripts de alerta personalizados.</p>
+<h1 id="logs-del-servidor-zabbix">Logs del servidor Zabbix</h1>
+<pre><code>osboxes@osboxes:~$ sudo  more /var/log/zabbix/zabbix_server.log
+</code></pre>
+
+<h1 id="frontent-php-y-apache">Frontent PHP y Apache</h1>
+<p>Zabbix usa Apache como servidor HTTP para administrar el servidor Zabbix desde un interface Web desarrollado con PHP.</p>
+<p>En la ruta <code>/etc/zabbix/</code> se encuentran algunos archivos de interés.</p>
+<p><strong><code>/etc/zabbix/apache.conf</code></strong>: Fichero de configuración de la Web para Apache. Las primeras líneas indican donde están los archivos del sitio Web en <code>/usr/share/zabbix</code>. </p>
+<p><img alt="" src="../../server/img/problemas/04.png" /></p>
               
             </div>
           </div>
