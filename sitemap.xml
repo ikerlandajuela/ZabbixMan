@@ -43,6 +43,20 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/agente/configuracion_primer_agente_win7_en_server/</loc>
+     <lastmod>2018-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/recursos/</loc>
+     <lastmod>2018-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>
